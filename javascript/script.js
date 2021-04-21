@@ -157,6 +157,14 @@ function mostrar(){
     i = imprimirlista(listae, i);
 }
 
+let temp = {
+    "Nombre":null,
+    "FechadeNacimiento":null,
+    "FechadeDefunción":null,
+    "Imagen":null,
+    "Wikipedia": null,
+}
+
 function imprimirlista(lista, i){
     let p = document.getElementById("elemento");
     let j = 0;
@@ -166,27 +174,46 @@ function imprimirlista(lista, i){
         for(atr in pers){
             if(atr=="Nombre"){
                 newContent += `<div id="elemento${i}"><p>Nombre:${pers[atr]}</p>`;
+                temp.Nombre=pers[atr];
             }else if(atr=="Fecha de Nacimiento"){
                 newContent += `<p>Fecha de Nacimiento:${pers[atr]}</p>`;
+                temp.FechadeNacimiento=pers[atr];
             }else if(atr=="Fecha de Defunción"){
                 newContent += `<p>Fecha de Defunción o Disolucion:${pers[atr]}</p>`;
+                temp.FechadeDefunción=pers[atr];
             }else if(atr=="Imagen"){
                 newContent += `<img src="${pers[atr]}" width="100" height="100"><br>`;
+                temp.Imagen=pers[atr];
             }else if(atr=="Wikipedia"){
                 newContent += `<a href= "${pers[atr]}">Enlace a Wikipedia</a><br></div>`;
+                temp.Wikipedia=pers[atr];
             }
             newDiv.innerHTML=newContent;
         }
         i++;
         j++;
+        sessionStorage.setItem("temp",temp);
         p.appendChild(newDiv);
         console.log("Antes del if");
         if(sessionStorage.getItem('log')=='true'){
             console.log("Entro al if");
             p.innerHTML += `<button onclick="eliminarobjeto(this,${i})">Eliminar elemento</button>`;
+            p.innerHTML += `<button onclick="location.href = '../html/modiElem.html';">Modificar elemento</button>`;
         }
     }
     return i;
+}
+
+function updaterecollect(){
+    event.preventDefault();
+    let temp1 = sessionStorage.getItem("temp");
+    temp1.Nombre = document.getElementById('name').value;
+    temp1.FechadeNacimiento = document.getElementById('fechai').value;
+    temp1.FechadeDefunción = document.getElementById('fechad').value;
+    temp1.Imagen = document.getElementById('img').value;
+    temp1.Wikipedia = document.getElementById('wiki').value;
+    sessionStorage.setItem("temp",temp1);
+    window.location.href = '../html/index.html';
 }
 
 function eliminarobjeto(obj,i){
