@@ -1,0 +1,33 @@
+#tituloPrincipal{
+    color:orange;
+    size: 30px;
+    font-style: italic;
+    text-align: center;
+    border:1px solid orange;
+}
+#titulo-centro{
+    color:orange;
+    text-align: center;
+}
+p{
+    color: yellow;
+}
+button{
+    background-color: lightgreen;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+label{
+    color:brown;
+    size: 50px;
+    font-style: italic;
+    text-align: center;
+    border:2px solid brown;
+}
+#background{
+    background-color: #3588F2;
+}

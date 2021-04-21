@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html id = "background" lang="es">
+    <head>
+        <meta charset ="UTF-8">
+        <title>Anales de la Ciencia</title>
+        <link rel = "stylesheet" type = "text/css" href = "../css/style.css"/>
+    </head>
+    <body>
+        <h1 id = "tituloPrincipal">Anales de la Ciencia</h1>
+        <div>
+            <form>
+                <p id="titulo-centro">Formulario de creación de Elementos</p>
+                <input type="radio" id="elemJSON" name="type" value="Persona">
+                <label for="type">Persona</label><br>
+                <input type="radio" id="elemJSON" name="type" value="Producto">
+                <label for="type">Producto</label><br>
+                <input type="radio" id="elemJSON" name="type" value="Entidad">
+                <label for="type">Entidad</label><br>
+                <label for="name">Nombre completo</label><br>
+                <input type="text" id="name"><br>
+                <label for="fechai">Fecha de nacimiento o de creación</label><br>
+                <input type="text" id="fechai"><br>
+                <label for="fechad">Fecha de defunción o de disolución</label><br>
+                <input type="text" id="fechad"><br>
+                <label for="img">Link de la imagen</label><br>
+                <input type="text" id="img"><br>
+                <label for="wiki">Link de Wikipedia</label><br>
+                <input type="text" id="wiki"><br>
+                <label for="personas">Personas involucradas</label><br>
+                <input type="text" id="personas"><br>
+                <label for="entidades">Entidades relacionadas</label><br>
+                <input type="text" id="entidades"><br>
+                <button onclick="aniadir()">Guardar cambios</button>
+            </form>
+        </div>
+        <script src="../javascript/script.js"></script>
+    </body>
+</html>
